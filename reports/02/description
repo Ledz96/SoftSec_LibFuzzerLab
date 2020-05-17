@@ -1,1 +1,0 @@
-iend is never freed after allocation, nor it is checked if it's allocated twice
