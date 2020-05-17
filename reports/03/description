@@ -1,1 +1,0 @@
-Need to free chunk->data other than the chunk itself for the various unique chunks (plte, iend etc.) 
