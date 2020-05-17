@@ -20,7 +20,7 @@ In practice, however, the pointer is never freed after its allocation, leading t
 
 **Steps to Reproduce**
 
-./fuzzer_load_png ../reports/01/leak-2d5ff885f157e7321b0f50c06272f3da682963af
+./fuzzer_load_png ../reports/00/leak-2d5ff885f157e7321b0f50c06272f3da682963af
 
 **Proof of concept**
 
