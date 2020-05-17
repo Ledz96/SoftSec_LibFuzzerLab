@@ -1,0 +1,15 @@
+=================================================================
+==8269==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7fbc3c610254 bp 0x7fff0b7216b0 sp 0x7fff0b721680 T0)
+==8269==The signal is caused by a READ memory access.
+==8269==Hint: address points to the zero page.
+    #0 0x7fbc3c610253 in fclose /build/glibc-OTsEL5/glibc-2.27/libio/iofclose.c:34
+    #1 0x510b7d in __interceptor_fclose (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png_name+0x510b7d)
+    #2 0x551633 in load_png /home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/pngparser.c:748:5
+    #3 0x54aa82 in LLVMFuzzerTestOneInput /home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png_name.c:18:8
+    #4 0x42ebc7 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png_name+0x42ebc7)
+    #5 0x43880b in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, fuzzer::fuzzer_allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png_name+0x43880b)
+    #6 0x43a972 in fuzzer::Fuzzer::Loop(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, fuzzer::fuzzer_allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png_name+0x43a972)
+    #7 0x429e5c in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png_name+0x429e5c)
+    #8 0x41cd22 in main (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png_name+0x41cd22)
+    #9 0x7fbc3c5b3b96 in __libc_start_main /build/glibc-OTsEL5/glibc-2.27/csu/../csu/libc-start.c:310
+    #10 0x41cd99 in _start (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png_name+0x41cd99)

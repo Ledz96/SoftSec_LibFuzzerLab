@@ -1,0 +1,37 @@
+==17148==ERROR: AddressSanitizer: attempting double-free on 0x619000006e80 in thread T0:
+    #0 0x5120e0 in __interceptor_free.localalias.0 (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x5120e0)
+    #1 0x551735 in load_png /home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/pngparser.c:760:13
+    #2 0x54a933 in LLVMFuzzerTestOneInput /home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png.c:15:3
+    #3 0x42ebc7 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x42ebc7)
+    #4 0x439434 in fuzzer::Fuzzer::MutateAndTestOne() (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x439434)
+    #5 0x43aa9f in fuzzer::Fuzzer::Loop(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, fuzzer::fuzzer_allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x43aa9f)
+    #6 0x429e5c in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x429e5c)
+    #7 0x41cd22 in main (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x41cd22)
+    #8 0x7fc96a3b2b96 in __libc_start_main /build/glibc-OTsEL5/glibc-2.27/csu/../csu/libc-start.c:310
+    #9 0x41cd99 in _start (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x41cd99)
+
+0x619000006e80 is located 0 bytes inside of 1013-byte region [0x619000006e80,0x619000007275)
+freed by thread T0 here:
+    #0 0x5120e0 in __interceptor_free.localalias.0 (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x5120e0)
+    #1 0x54caef in read_png_chunk /home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/pngparser.c:301:28
+    #2 0x54ffec in load_png /home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/pngparser.c:589:12
+    #3 0x54a933 in LLVMFuzzerTestOneInput /home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png.c:15:3
+    #4 0x42ebc7 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x42ebc7)
+    #5 0x439434 in fuzzer::Fuzzer::MutateAndTestOne() (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x439434)
+    #6 0x43aa9f in fuzzer::Fuzzer::Loop(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, fuzzer::fuzzer_allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x43aa9f)
+    #7 0x429e5c in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x429e5c)
+    #8 0x41cd22 in main (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x41cd22)
+    #9 0x7fc96a3b2b96 in __libc_start_main /build/glibc-OTsEL5/glibc-2.27/csu/../csu/libc-start.c:310
+
+previously allocated by thread T0 here:
+    #0 0x5122b0 in __interceptor_malloc (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x5122b0)
+    #1 0x54c1c0 in read_png_chunk /home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/pngparser.c:277:29
+    #2 0x54ffec in load_png /home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/pngparser.c:589:12
+    #3 0x54a933 in LLVMFuzzerTestOneInput /home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png.c:15:3
+    #4 0x42ebc7 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x42ebc7)
+    #5 0x439434 in fuzzer::Fuzzer::MutateAndTestOne() (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x439434)
+    #6 0x43aa9f in fuzzer::Fuzzer::Loop(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, fuzzer::fuzzer_allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x43aa9f)
+    #7 0x429e5c in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x429e5c)
+    #8 0x41cd22 in main (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x41cd22)
+    #9 0x7fc96a3b2b96 in __libc_start_main /build/glibc-OTsEL5/glibc-2.27/csu/../csu/libc-start.c:310
+ 

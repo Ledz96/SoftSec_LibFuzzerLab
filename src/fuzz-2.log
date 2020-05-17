@@ -1,0 +1,9 @@
+INFO: Seed: 2870776012
+INFO: Loaded 1 modules   (249 inline 8-bit counters): 249 [0x7973b0, 0x7974a9), 
+INFO: Loaded 1 PC tables (249 PCs): 249 [0x573288,0x574218), 
+INFO:       16 files found in ../seeds
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 16 min: 276b max: 4096b total: 23776b rss: 37Mb
+#17	INITED cov: 12 ft: 15 corp: 3/1853b exec/s: 0 rss: 38Mb
+#17	DONE   cov: 12 ft: 15 corp: 3/1853b exec/s: 0 rss: 38Mb
+Done 17 runs in 0 second(s)

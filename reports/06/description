@@ -1,0 +1,1 @@
+bug gia' visto: file si chiude anche se prima non e' stato aperto correttamente (in error).  

@@ -1,0 +1,1 @@
+After allocating the memory chunk, something may happen that makes it necessary to free it. However, not making it NULL before that makes a double free possible 

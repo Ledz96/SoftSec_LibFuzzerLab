@@ -1,0 +1,12 @@
+Direct leak of 10100 byte(s) in 1 object(s) allocated from:
+    #0 0x512730 in realloc (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x512730)
+    #1 0x54d5ca in decompress_png_data /home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/pngparser.c:385:25
+    #2 0x550916 in load_png /home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/pngparser.c:684:9
+    #3 0x54a933 in LLVMFuzzerTestOneInput /home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png.c:15:3
+    #4 0x42ebc7 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x42ebc7)
+    #5 0x4372c0 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool*) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x4372c0)
+    #6 0x4388c6 in fuzzer::Fuzzer::ReadAndExecuteSeedCorpora(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, fuzzer::fuzzer_allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x4388c6)
+    #7 0x43a972 in fuzzer::Fuzzer::Loop(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, fuzzer::fuzzer_allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x43a972)
+    #8 0x429e5c in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x429e5c)
+    #9 0x41cd22 in main (/home/alessandro/Downloads/college/Software_Security/lab0x04fuzzer/src/fuzzer_load_png+0x41cd22)
+    #10 0x7f2536f6db96 in __libc_start_main /build/glibc-OTsEL5/glibc-2.27/csu/../csu/libc-start.c:310 
